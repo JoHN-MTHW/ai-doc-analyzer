@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.sqlite3
+
+# Streamlit
+.streamlit/
+
+# PDF storage (optional, if you don’t want to push uploaded PDFs)
+document_store/pdfs/
+
+# OS files
+.DS_Store
+Thumbs.db
