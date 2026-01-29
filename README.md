@@ -1,118 +1,116 @@
-# MENTO DOC 📝
+# 🧠 MENTO BOT
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-blue?logo=streamlit)](https://streamlit.io/)  
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)]()   
+> An AI-Powered **Local LLM** Python Coding Assistant built with
+> **Streamlit**, **LangChain**, and **Ollama**
 
-MENTO DOC is an AI-powered document assistant built with **Streamlit** and **LangChain**. It allows users to upload PDFs, automatically index their content, and ask questions about the documents using a chatbot interface powered by **Ollama** embeddings.
+[![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)\
+[![LangChain](https://img.shields.io/badge/Powered%20by-LangChain-2E7D32?logo=python&logoColor=white)](https://python.langchain.com/)\
+[![Ollama](https://img.shields.io/badge/LLM%20Runtime-Ollama-0A66C2?logo=ollama&logoColor=white)](https://ollama.ai/)\
+![Local Only](https://img.shields.io/badge/Local%20LLMs-Yes-success)\
+[![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
----
+------------------------------------------------------------------------
 
-## ⚠️ Important
+## 💡 Overview
 
-MENTO DOC requires a **local Ollama model** installed on your machine.  
-You must have the Ollama desktop app installed and the required model (`deepseek-r1:1.5b`) downloaded locally before running the app.
+**MENTO BOT** is a local-first AI coding assistant designed to help
+developers **debug, review, optimize, and reason about Python code**.
 
----
+🕰️ **Project Background**\
+This project was originally built **\~1 year ago**, at a time when
+**local LLM tooling and generative AI workflows were still emerging**.\
+Recently, the project was **refined and optimized**, with support added
+for **multiple local models** and improved state handling.
 
-## Features
+⚠️ **Important:**\
+This application requires **Ollama running locally**. It **cannot be
+deployed to cloud platforms** like Streamlit Cloud due to its local LLM
+dependency.
 
-- Upload multiple PDF documents
-- Automatic chunking and indexing of PDF content
-- Contextual question-answering using AI
-- Chat interface with styled messages
-- Clear chat history and remove uploaded documents
-- Custom dark-themed UI
+------------------------------------------------------------------------
 
----
+## 🚀 Key Features
 
-## Installation
+### 🧠 Multi-Mode AI Assistant
 
-1. **Install Ollama**  
-   Download and install the [Ollama app](https://ollama.com/).  
-   Download the required model (`deepseek-r1:1.5b`) through Ollama.
+-   **Default** -- General Python coding help\
+-   **Bug Fixer** -- Identify and fix issues\
+-   **Code Reviewer** -- Suggest improvements and best practices\
+-   **Optimizer** -- Improve performance and efficiency
 
-2. **Clone the repository:**
+### 🔁 Multi-Model Support (via Ollama)
 
-```bash
-git clone https://github.com/yourusername/mento-doc.git
-cd mento-doc
-````
+Easily switch between different local LLMs at runtime: -
+`deepseek-r1:1.5b` - `gemma3:4b`
 
-3. **Create a virtual environment (optional but recommended):**
+> Any Ollama-compatible model can be added with minimal changes.
 
-```bash
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-```
+### ⚙️ Developer Utilities
 
-4. **Install dependencies:**
+-   💬 Persistent chat history
+-   💾 Downloadable chat logs
+-   🧮 Safe Python code execution sandbox
+-   🎨 Custom dark UI theme
+-   🔒 Fully local inference (no APIs, no data leakage)
 
-```bash
+------------------------------------------------------------------------
+
+## 🖥️ Tech Stack
+
+  Component          Technology
+  ------------------ -----------------
+  Frontend           Streamlit
+  AI Orchestration   LangChain
+  LLM Runtime        Ollama (local)
+  Models             DeepSeek, Gemma
+  Language           Python 3.10+
+
+------------------------------------------------------------------------
+
+## ⚠️ Local Setup Instructions
+
+### Prerequisites
+
+-   Python 3.10+
+-   Ollama installed locally
+
+### Steps
+
+``` bash
+ollama pull deepseek-r1:1.5b
+ollama pull gemma3:4b
+ollama serve
+git clone https://github.com/<your-username>/mento-bot.git
+cd mento-bot
 pip install -r requirements.txt
-```
-
----
-
-## Usage
-
-1. **Run the Streamlit app:**
-
-```bash
 streamlit run app.py
 ```
 
-2. **Upload PDFs:**
-   Use the sidebar to upload one or multiple PDF files.
+------------------------------------------------------------------------
 
-3. **Ask Questions:**
-   Type your query in the chat box. The AI will provide concise, factual answers based on the uploaded documents.
+## 🧩 Project Structure
 
-4. **Manage Documents and Chat:**
+    mento-bot/
+    ├── app.py
+    ├── requirements.txt
+    ├── README.md
+    ├── .gitignore
 
-* Clear chat history via the sidebar button
-* Delete indexed documents with the ❌ button next to the document name
+------------------------------------------------------------------------
 
----
+## 🤝 Contributing
 
-## File Structure
+Contributions are welcome via issues or pull requests.
 
-```
-mento-doc/
-│
-├── app.py               # Main Streamlit app
-├── requirements.txt     # Python dependencies
-├── document_store/      # Folder to store uploaded PDFs
-│   └── pdfs/
-└── README.md
-```
+------------------------------------------------------------------------
 
----
+## ❤️ Acknowledgements
 
-## Technologies Used
+-   Streamlit
+-   LangChain
+-   Ollama
 
-* **[Streamlit](https://streamlit.io/)** – Web app framework for Python
-* **[LangChain](https://www.langchain.com/)** – LLM orchestration framework
-* **[Ollama Embeddings](https://ollama.com/)** – Embeddings and LLM integration (requires local model)
-* **PDFPlumber** – PDF parsing
-* **InMemoryVectorStore** – Document similarity search
-
----
-
-## Customization
-
-* Adjust `chunk_size` and `chunk_overlap` in `RecursiveCharacterTextSplitter` to change document chunking behavior.
-* Change the LLM model in `OllamaLLM(model="deepseek-r1:1.5b")` to use a different Ollama model (must be downloaded locally).
-
----
-
-
-## Contribution
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
----
 
 ## Contact
 
 Created by John Mathew – [jhnmathew125@gmail.com](mailto:jhnmathew125@gmail.com)
-
